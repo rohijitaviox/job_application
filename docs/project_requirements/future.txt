@@ -1,0 +1,43 @@
+:- Resume Builder
+:- Resume Parser
+:- Candidate login
+
+
+FUTURE
+
+View All Jobs:
+	=====Frontend=====
+  :- View all open/closed jobs.
+  :- View a particular Job
+  :- View applications of particular jobs
+  
+  
+
+View Job:
+	=====Frontend=====
+  :- View Job details
+  :- Close applications
+  :- Close Job
+  
+  
+  
+Create New Job:
+	=====Frontend=====
+  :- Job Name(Position)
+  :- Experience required Min. and Max.
+  :- Salary Range Min. and Max.
+  :- Description
+  :- Roles and responsibility
+  :- Requirements
+  :- Location
+  :- Bar candidates who have previously applied within:
+    :- Time (In months)
+  
+
+
+  
+  
+  
+  
+  
+  

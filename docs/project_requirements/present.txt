@@ -1,0 +1,129 @@
+From Office point of view
+:- Schedule an interview, By attaching the resume.
+
+	Collect Information:
+	:- Candidate basic info. last company, role and responsibility, src like linkedin, f2f.
+  :- Education
+  :- Total Experience
+  :- Specific expreiences if required (for eg. in a particular language or stack).
+	:- Last CTC and expected CTC
+	:- Any Reason for leaving last job
+  :- Past Project link along with the description, his/her role and tech stack.
+  
+  
+	:- Set initial and final status based on OTP and link.
+
+Things that we need to check before interview:
+:- How many times candidate has applied?
+	- If candidate has applied with 2-3 month than we will not proceed further.
+:- What was the last feedback?
+
+
+
+Once Interview Done:
+- Get feedback from the candidate [Optional]
+- Get list of question and feedback from the employee
+
+
+
+
+
+---------------------------
+Applicant View
+---------------------------
+
+Application:
+	=====Frontend=====
+  EMAIL AND PHONE NO. PAGE
+  :- Job ID (Can be inferred/taken from url)
+	:- Get candidate's
+  	:- E-mail
+    :- Phone No.
+
+    Note: E-mail and/or Phone no. can be utilised to identify a candidate.
+
+  =====Backend=====
+  :- Check if email/phone exists
+    :- If it does, get particular candidate.
+      :- Update Primary email/phone to this email/phone, add previous email/phone to additional emai/phone 
+      :- Check if candidate has already applied for this job. If so, stop further processing and let candidate know.
+ 
+
+  GET DETAILS PAGE
+  :- Job ID (Can be inferred/taken from url)
+  :- Name
+  :- Latest Education
+  :- Graduation Year
+  :- Graduation Institution
+  :- Total Experience
+  :- Previous Experience(s) (If total experience > 0 yrs) (Can be multiple)
+    :- Name of Company
+    :- Worked from date - Worked till date
+    :- Position (Last Held)
+    :- Projects (Can be multiple)
+      :- Name of Project
+      :- Links if available
+      :- Candidate's Role in the project
+      :- Tech Stack
+      :- Brief description
+  :- Specific experience if required for position.
+  :- Specific Questions (Optional, Multiple)
+  :- Last CTC and Expected CTC
+  :- Any Reason for leaving last job
+  :- Upload Resume
+  :- LinkedIn profile (Optional)
+  :- Git link (Optional)
+  :- Where candidate found this job  (Dropdown, with input in case of "other")(We can capture referrer URI and use it to have a default selection)
+  
+  =====Backend=====
+  
+  :- Create an application.
+  :- Associate a unique candidate
+      Since we cannot be sure of candidate's identity, we can assign unique ID to a candidate.Before doing so, see if given email/phone corresponds to an existing candidate.
+  :- Save latest details to candidate details.
+  :- If candidate exists, check if he/she has been blacklisted.
+  	:- If blacklisted, flag this application as such. Discard application
+  :- Check if this particular candidate has applied within 2-3 months. This time can be set while creating job posting.
+  	:- If applied within this time, flag this application.
+    
+
+
+
+---------------------------
+Job Poster View
+---------------------------
+
+
+View Applications:
+	===== Frontend=====
+  :- List all applications.
+  :- Filter by experience
+  :- Filter by flags. (Applied Recently)
+  :- Filter by status (Applied || Rejected || Interview scheduled || Interview Held || Not Hired || Offered)
+  
+  
+  
+View Indivdual Application:
+	=====Frontend=====
+  :- List details of application
+  :- Action (On status) (Reject || Schedule Interview || Edit Interview Schedule || Cancel Interview)
+  :- Flag a candidate
+  :- Flag an application
+  :- If Interview being scheduled
+  	:- Select Date and Time
+    :- Select Interviewer
+    :- Links if applicable (Google Meet/Zoom etc.)
+  :- If Interview being cancelled
+  	:- Cancellation reason
+  
+  =====Backend=====
+  :- If interview being scheduled/updated/cancelled, send mail to candidate
+
+
+
+Interview feedback:
+  =====Frontend=====
+  :- Interview Feedbacks
+  :- Recommendation
+  
+  
